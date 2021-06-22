@@ -2,16 +2,16 @@
 
 // Config vars
 // Kaldi logo brand color: #FD461E
-$kaldi-red: #D64000
+$kaldi-red: #05A8AA
 $kaldi-red-invert: #fff
 
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
-$body-color: #333
-$black: #2b2523
+$body-color: #12263A
+$black: #12263A
 
 .navbar .navbar-menu
-  box-shadow:none !important
+  box-shadow: none !important
 
 .content .taglist
   list-style: none
@@ -31,22 +31,48 @@ $black: #2b2523
 // Helper Classes
 .full-width-image-container
   width: 100vw
-  height: 400px
+  height: 600px
   position: relative
   left: 50%
   right: 50%
   margin: 2em -50vw
   background-size: cover
-  background-position: bottom
+  background-position: center
   display: flex
   justify-content: center
   align-items: center
 
+.full-width-image:before
+  content: ''
+  display: block
+  position: absolute
+  bottom: 150px
+  left: 0
+  width: 400px
+  height: 400px
+  border-left: 200px solid white
+  border-bottom: 200px solid white
+  border-right: 200px solid transparent
+  border-top: 200px solid transparent
+
+.full-width-image:after
+  content: ''
+  display: block
+  position: absolute
+  top: 0
+  right: 0
+  width: 400px
+  height: 400px
+  border-right: 200px solid white
+  border-top: 200px solid white
+  border-left: 200px solid transparent
+  border-bottom: 200px solid transparent
+
 .full-width-image
     width: 100vw
-    height: 400px
+    height: 600px
     background-size: cover
-    background-position: bottom
+    background-position: center
     display: flex
     justify-content: center
     align-items: center
@@ -61,10 +87,10 @@ $black: #2b2523
     border-radius: .25rem
     text-decoration: none
     font-weight: 700
-    color: #CC3700
+    color: #05A8AA
     text-align: center
-    -webkit-box-shadow: inset 0 0 0 2px #CC3700
-    box-shadow: inset 0 0 0 2px #f40
+    -webkit-box-shadow: inset 0 0 0 2px #05A8AA
+    box-shadow: inset 0 0 0 2px #05A8AA
     -webkit-transition: all .15s ease
     transition: all .15s ease
 
@@ -114,13 +140,13 @@ $menu-label-color: $white-ter
 
 // blog roll
 .blog-list-item.is-featured
-  background-color: #d6400033;
+  background-color: #05A8AA
 .blog-list-item header
-  display: flex;
-  margin-bottom: 1em;
+  display: flex
+  margin-bottom: 1em
 .blog-list-item .featured-thumbnail
-  flex-basis: 35%;
-  margin: 0 1.5em 0 0;
+  flex-basis: 35%
+  margin: 0 1.5em 0 0
 
 
 @import "~bulma"
@@ -129,12 +155,27 @@ $menu-label-color: $white-ter
 // responsiveness
 +tablet-only
   .blog-list-item .featured-thumbnail
-    flex-basis: 50%;
+    flex-basis: 50%
 
 +mobile
   .blog-list-item header
     display: block
   .blog-list-item .featured-thumbnail
-    text-align: center;
-    max-width: 70%;
-    margin: 0 0 1em;
+    text-align: center
+    max-width: 70%
+    margin: 0 0 1em
+  .full-width-image:before
+    width: 100px
+    height: 100px
+    border-left: 100px solid white
+    border-bottom: 100px solid white
+    border-right: 100px solid transparent
+    border-top: 100px solid transparent
+
+  .full-width-image:after
+    width: 100px
+    height: 100px
+    border-right: 100px solid white
+    border-top: 100px solid white
+    border-left: 100px solid transparent
+    border-bottom: 100px solid transparent

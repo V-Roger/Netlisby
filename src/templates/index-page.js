@@ -22,7 +22,7 @@ export const IndexPageTemplate = ({
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
-        backgroundPosition: `top left`,
+        backgroundPosition: `center`,
         backgroundAttachment: `fixed`,
       }}
     >
@@ -40,11 +40,12 @@ export const IndexPageTemplate = ({
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
             boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
+              '#06C4C7 0.5rem 0.5rem 0px, #28797A -0.5rem -0.5rem 0px',
+            backgroundColor: '#05A8AA',
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
+            borderRadius: '6px'
           }}
         >
           {title}
@@ -53,11 +54,12 @@ export const IndexPageTemplate = ({
           className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
             boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
+              '#05A8AA 0.5rem 0px 0px, #05A8AA -0.5rem 0px 0px',
+            backgroundColor: '#05A8AA',
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
+            borderRadius: '4px'
           }}
         >
           {subheading}
