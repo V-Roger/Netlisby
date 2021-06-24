@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+// import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import Masonry from 'react-masonry-css'
 
 export const PhotosPageTemplate = ({
   image,
@@ -14,6 +15,7 @@ export const PhotosPageTemplate = ({
   testimonials,
   fullImage,
   pricing,
+  gallery,
 }) => (
   <div className="content">
     <div
@@ -41,7 +43,7 @@ export const PhotosPageTemplate = ({
         {title}
       </h2>
     </div>
-    <section className="section section--gradient">
+    <section className="section section--gradient" style={{ zIndex: 5 }}>
       <div className="container">
         <div className="section">
           {/* <div className="columns">
@@ -50,6 +52,14 @@ export const PhotosPageTemplate = ({
               <p>{description}</p>
             </div>
           </div> */}
+          <Masonry
+            breakpointCols={4}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column">
+            {gallery.map(image => 
+                <img src={image.publicURL} />
+            )}        
+          </Masonry>
           <div className="columns">
             <div className="column is-10 is-offset-1">
               {/* <Features gridItems={intro.blurbs} /> */}
@@ -62,7 +72,7 @@ export const PhotosPageTemplate = ({
                 </div>
               </div>
               <div className="tile is-ancestor">
-                <div className="tile is-vertical">
+                {/* <div className="tile is-vertical">
                   <div className="tile">
                     <div className="tile is-parent is-vertical">
                       <article className="tile is-child">
@@ -79,7 +89,7 @@ export const PhotosPageTemplate = ({
                     <article className="tile is-child">
                       <PreviewCompatibleImage imageInfo={main.image3} />
                     </article>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               {/* <Testimonials testimonials={testimonials} /> */}
@@ -98,7 +108,7 @@ export const PhotosPageTemplate = ({
               </h2>
               <p className="is-size-5">{pricing.description}</p>
               <Pricing data={pricing.plans} /> */}
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </div>
@@ -128,6 +138,7 @@ PhotosPageTemplate.propTypes = {
     description: PropTypes.string,
     plans: PropTypes.array,
   }),
+  gallery: PropTypes.array,
 }
 
 const PhotosPage = ({ data }) => {
@@ -142,9 +153,8 @@ const PhotosPage = ({ data }) => {
         description={frontmatter.description}
         intro={frontmatter.intro}
         main={frontmatter.main}
-        testimonials={frontmatter.testimonials}
         fullImage={frontmatter.full_image}
-        pricing={frontmatter.pricing}
+        gallery={frontmatter.galleryImages}
       />
     </Layout>
   )
@@ -160,7 +170,7 @@ PhotosPage.propTypes = {
 
 export default PhotosPage
 
-export const PhotosPageQuery = graphql`
+export const pageQuery = graphql`
   query PhotosPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
@@ -175,56 +185,12 @@ export const PhotosPageQuery = graphql`
         heading
         description
         intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
           heading
           description
         }
         main {
           heading
           description
-          image1 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 526, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image2 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 526, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image3 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 1075, quality: 72) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-        testimonials {
-          author
-          quote
         }
         full_image {
           childImageSharp {
@@ -233,15 +199,8 @@ export const PhotosPageQuery = graphql`
             }
           }
         }
-        pricing {
-          heading
-          description
-          plans {
-            description
-            items
-            plan
-            price
-          }
+        galleryImages {
+          publicURL
         }
       }
     }

@@ -32,7 +32,6 @@ $black: #12263A
 .full-width-image-container
   width: 100vw
   height: 600px
-  position: relative
   left: 50%
   right: 50%
   margin: 2em -50vw
@@ -47,7 +46,7 @@ $black: #12263A
   display: block
   position: absolute
   z-index: 1
-  bottom: 150px
+  bottom: -150px
   left: 0
   width: 400px
   height: 400px
@@ -71,30 +70,32 @@ $black: #12263A
   border-bottom: 200px solid transparent
 
 .full-width-image
-    width: 100vw
-    height: 600px
-    background-size: cover
-    background-position: center
-    display: flex
-    justify-content: center
-    align-items: center
+  width: 100vw
+  height: 600px
+  background-size: cover
+  background-position: center
+  display: flex
+  justify-content: center
+  align-items: center
+  position: relative
+  z-index: -1
 
 .btn
-    display: inline-block
-    padding: 12px 16px 10px
-    font-size: 18px
-    font-size: 1rem
-    line-height: 1.25
-    background-color: #fff
-    border-radius: .25rem
-    text-decoration: none
-    font-weight: 700
-    color: #05A8AA
-    text-align: center
-    -webkit-box-shadow: inset 0 0 0 2px #05A8AA
-    box-shadow: inset 0 0 0 2px #05A8AA
-    -webkit-transition: all .15s ease
-    transition: all .15s ease
+  display: inline-block
+  padding: 12px 16px 10px
+  font-size: 18px
+  font-size: 1rem
+  line-height: 1.25
+  background-color: #fff
+  border-radius: .25rem
+  text-decoration: none
+  font-weight: 700
+  color: #05A8AA
+  text-align: center
+  -webkit-box-shadow: inset 0 0 0 2px #05A8AA
+  box-shadow: inset 0 0 0 2px #05A8AA
+  -webkit-transition: all .15s ease
+  transition: all .15s ease
 
 .margin-top-0
   margin-top: 0 !important
@@ -181,3 +182,21 @@ $menu-label-color: $white-ter
     border-top: 100px solid white
     border-left: 100px solid transparent
     border-bottom: 100px solid transparent
+
+.my-masonry-grid 
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  margin-left: -15px
+  width: auto
+
+.my-masonry-grid_column 
+  padding-left: 15px 
+  background-clip: padding-box
+
+
+/* Style your items */
+.my-masonry-grid_column > img  /* change div to reference your elements you put in <Masonry> */
+  background: grey
+  margin-bottom: 10px
+  object-fit: cover
