@@ -1,5 +1,12 @@
 ---
 heading: Great coffee with a conscience
+gallery_images:
+  - /img/blog-index.jpg
+  - /img/chemex.jpg
+  - /img/dscf0902.jpg
+  - /img/20210628__004.jpg
+  - /img/jumbotron.jpg
+  - /img/img_9012-2-.jpg
 path: /photos
 templateKey: photos-page
 pricing:
@@ -29,13 +36,13 @@ pricing:
         - Unlimited varieties
       plan: Custom
       price: ??
-full_image: /img/products-full-width.jpg
 galleryImages:
   - /img/blog-index.jpg
   - /img/chemex.jpg
   - /img/flavor_wheel.jpg
   - /img/jumbotron.jpg
   - /img/products-grid2.jpg
+full_image: /img/products-full-width.jpg
 intro:
   blurbs:
     - image: /img/coffee.png
