@@ -40,7 +40,7 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
-            <AniLink cover to="/" className="navbar-item" title="Logo">
+            <AniLink cover bg="white" duration={0.5} to="/" className="navbar-item" title="Logo">
               <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
             </AniLink>
             {/* Hamburger menu */}
@@ -59,16 +59,16 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <AniLink fade direction="up" className="navbar-item" to="/about">
+              <AniLink cover bg="white" duration={0.5} className="navbar-item" to="/about">
                 MENU
               </AniLink>
-              <AniLink fade className="navbar-item" to="/photos">
+              <AniLink cover bg="white" duration={0.5} className="navbar-item" to="/photos">
                 PHOTOS
               </AniLink>
               {/* <Link className="navbar-item" to="/blog">
                 PHOTOS
               </Link> */}
-              <AniLink fade  className="navbar-item" to="/contact">
+              <AniLink cover bg="white" duration={0.5} className="navbar-item" to="/contact">
                 CONTACT
               </AniLink>
               {/* <Link className="navbar-item" to="/contact/examples">
