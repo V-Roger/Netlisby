@@ -47,6 +47,7 @@ const TemplateWrapper = ({ children }) => {
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
+        <link rel="stylesheet" href="https://use.typekit.net/vom1sxe.css"/>
       </Helmet>
       <Navbar />
       <div>{children}</div>

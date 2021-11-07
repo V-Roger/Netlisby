@@ -1,6 +1,5 @@
 import React from 'react'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import logo from '../img/logo_burger.svg'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -34,14 +33,14 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="navbar is-transparent is-fixed-top"
+        className="navbar is-fixed-top"
         role="navigation"
         aria-label="main-navigation"
       >
         <div className="container">
           <div className="navbar-brand">
-            <AniLink cover bg="white" duration={0.5} to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+            <AniLink cover bg="white" duration={0.5} to="/" className="navbar-item calligraphed is-size-3" title="Logo">
+              Le Grattalu
             </AniLink>
             {/* Hamburger menu */}
             <div
@@ -65,18 +64,12 @@ const Navbar = class extends React.Component {
               <AniLink cover bg="white" duration={0.5} className="navbar-item" to="/photos">
                 PHOTOS
               </AniLink>
-              {/* <Link className="navbar-item" to="/blog">
-                PHOTOS
-              </Link> */}
               <AniLink cover bg="white" duration={0.5} className="navbar-item" to="/contact">
                 CONTACT
               </AniLink>
-              {/* <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link> */}
             </div>
             <div className="navbar-end has-text-centered">
-
+              
             </div>
           </div>
         </div>

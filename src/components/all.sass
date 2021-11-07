@@ -1,17 +1,42 @@
 @import "~bulma/sass/utilities/initial-variables"
 
-// Config vars
-// Kaldi logo brand color: #FD461E
-$kaldi-red: #05A8AA
-$kaldi-red-invert: #fff
+/* Color Theme Swatches in Hex */
+$Pouring-red-wine-into-the-glass-against-wooden-table-1-hex: #8596A6
+$Pouring-red-wine-into-the-glass-against-wooden-table-2-hex: #F2A663
+$Pouring-red-wine-into-the-glass-against-wooden-table-3-hex: #BF946F
+$Pouring-red-wine-into-the-glass-against-wooden-table-4-hex: #8C0303
+$Pouring-red-wine-into-the-glass-against-wooden-table-5-hex: #400101
 
-$primary: $kaldi-red
-$primary-invert: $kaldi-red-invert
-$body-color: #12263A
-$black: #12263A
+/* Color Theme Swatches in Hex */
+$VINTAGE-CAFE-x-Logo-1-hex: #F2EDA0
+$VINTAGE-CAFE-x-Logo-2-hex: #F2F0D5
+$VINTAGE-CAFE-x-Logo-3-hex: #F23322
+$VINTAGE-CAFE-x-Logo-4-hex: #8C1E14
+$VINTAGE-CAFE-x-Logo-5-hex: #0D0D0D
+
+$primary: #400101
+$primary-invert: #8596A6
+$body-color: #0D0D0D
+$black: #400101
+
+//Menu overrides
+$menu-item-color: $black
+$menu-item-hover-color: $black !important
+$menu-item-hover-background-color: $black
+$menu-item-active-color: $primary-invert
+$menu-item-active-background-color: $primary-invert
+$menu-list-border-left: 1px solid $primary-invert
+$menu-label-color: $white-ter
+
+@import "~bulma"
 
 .navbar .navbar-menu
   box-shadow: none !important
+
+.calligraphed
+  font-family: medusa, sans-serif
+  font-weight: 400
+  font-style: normal
 
 .content .taglist
   list-style: none
@@ -30,48 +55,44 @@ $black: #12263A
 
 // Helper Classes
 .full-width-image-container
+  position: relative
   width: 100vw
-  height: 600px
-  left: 50%
-  right: 50%
-  margin: 2em -50vw
-  background-size: cover
-  background-position: center
+  height: calc(100vh - 3.25rem)
   display: flex
   justify-content: center
   align-items: center
 
-.full-width-image:before
+.full-width-image-container:before
   content: ''
   display: block
   position: absolute
-  z-index: 1
-  bottom: -150px
+  z-index: 2
+  bottom: 0
   left: 0
-  width: 400px
-  height: 400px
-  border-left: 200px solid white
-  border-bottom: 200px solid white
-  border-right: 200px solid transparent
-  border-top: 200px solid transparent
+  width: 200px
+  height: 200px
+  border-left: 100px solid white
+  border-bottom: 100px solid white
+  border-right: 100px solid transparent
+  border-top: 100px solid transparent
 
-.full-width-image:after
+.full-width-image-container:after
   content: ''
   display: block
   position: absolute
-  z-index: 1
+  z-index: 2
   top: 0
   right: 0
-  width: 400px
-  height: 400px
-  border-right: 200px solid white
-  border-top: 200px solid white
-  border-left: 200px solid transparent
-  border-bottom: 200px solid transparent
+  width: 300px
+  height: 300px
+  border-right: 150px solid white
+  border-top: 150px solid white
+  border-left: 150px solid transparent
+  border-bottom: 150px solid transparent
 
 .full-width-image
   width: 100vw
-  height: 600px
+  height: calc(100vh - 3.25rem)
   background-size: cover
   background-position: center
   display: flex
@@ -90,18 +111,22 @@ $black: #12263A
   border-radius: .25rem
   text-decoration: none
   font-weight: 700
-  color: #05A8AA
+  color: #8C1E14
   text-align: center
-  -webkit-box-shadow: inset 0 0 0 2px #05A8AA
-  box-shadow: inset 0 0 0 2px #05A8AA
+  -webkit-box-shadow: inset 0 0 0 2px #8C1E14
+  box-shadow: inset 0 0 0 2px #8C1E14
   -webkit-transition: all .15s ease
   transition: all .15s ease
 
 .margin-top-0
   margin-top: 0 !important
 
-.navbar-item .icon
-  color: $primary
+a.navbar-item, a.navbar-item .icon
+  color: $black
+  &:hover,
+  &:focus,
+  &:active
+    color: #8C0303
 // Override for use of svg's from https://simpleicons.org/
 .icon svg
   width: 1.5rem
@@ -109,19 +134,13 @@ $black: #12263A
   fill: currentColor
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
+  color: #400101
 footer.footer
   padding: 3rem 0rem 0rem
   background-color: transparent
 
-//Menu overrides
-$menu-item-color: $white-ter
-$menu-item-hover-color: $black !important
-$menu-item-hover-background-color: $black
-$menu-item-active-color: $kaldi-red-invert
-$menu-item-active-background-color:	$kaldi-red-invert
-$menu-list-border-left: 1px solid $kaldi-red-invert
-$menu-label-color: $white-ter
-
+  a.navbar-item
+    color: white
 
 .menu-label
   font-size: 1em !important
@@ -132,28 +151,24 @@ $menu-label-color: $white-ter
 .social
   padding: 2em
 .social a
-    padding: .5em .5em .3em .5em
-    border-radius: 1em
-    background-color: $white-ter
-    margin: .5em
-    width: 1em
-    height: 1em
-    vertical-align: middle
-    display: inline
+  padding: .5em .5em .3em .5em
+  border-radius: 1em
+  background-color: $white-ter
+  margin: .5em
+  width: 1em
+  height: 1em
+  vertical-align: middle
+  display: inline
 
 // blog roll
 .blog-list-item.is-featured
-  background-color: #05A8AA
+  background-color: #F23322
 .blog-list-item header
   display: flex
   margin-bottom: 1em
 .blog-list-item .featured-thumbnail
   flex-basis: 35%
   margin: 0 1.5em 0 0
-
-
-@import "~bulma"
-
 
 // responsiveness
 +tablet-only
@@ -183,17 +198,16 @@ $menu-label-color: $white-ter
     border-left: 100px solid transparent
     border-bottom: 100px solid transparent
 
-.my-masonry-grid 
+.my-masonry-grid
   display: -webkit-box
   display: -ms-flexbox
   display: flex
   margin-left: -15px
   width: auto
 
-.my-masonry-grid_column 
-  padding-left: 15px 
+.my-masonry-grid_column
+  padding-left: 15px
   background-clip: padding-box
-
 
 /* Style your items */
 .my-masonry-grid_column > img  /* change div to reference your elements you put in <Masonry> */

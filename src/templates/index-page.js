@@ -2,9 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { Carousel } from 'react-responsive-carousel'
+
 import Layout from '../components/Layout'
 import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
+import CarouselSlide from '../components/Slide'
 
 export const IndexPageTemplate = ({
   image,
@@ -16,56 +19,16 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `bottom`,
-        backgroundAttachment: `fixed`,
-      }}
+    <Carousel
+      autoPlay={true}
+      infiniteLoop={true}
+      showStatus={false}
+      showThumbs={false}
+      interval={4000}
+      className="full-width-image-container" 
     >
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              '#06C4C7 0.5rem 0.5rem 0px, #28797A -0.5rem -0.5rem 0px',
-            backgroundColor: '#05A8AA',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-            borderRadius: '6px'
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              '#05A8AA 0.5rem 0px 0px, #05A8AA -0.5rem 0px 0px',
-            backgroundColor: '#05A8AA',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-            borderRadius: '4px'
-          }}
-        >
-          {subheading}
-        </h3>
-      </div>
-    </div>
+      <CarouselSlide title={title} subheading={subheading} imageSrc={!!image.childImageSharp ? image.childImageSharp.fluid.src : image} />
+    </Carousel>
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
@@ -96,7 +59,7 @@ export const IndexPageTemplate = ({
                     </Link>
                   </div>
                 </div>
-                <div className="column is-12">
+                {/* <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories
                   </h3>
@@ -106,7 +69,7 @@ export const IndexPageTemplate = ({
                       Read more
                     </Link>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
