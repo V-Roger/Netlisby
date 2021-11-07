@@ -1,7 +1,7 @@
 ---
 carousel:
   - slide:
-      image: /img/blog-index.jpg
+      image: /img/alex-munsell-yr4n8o_3upc-unsplash.jpg
       heading: Bienvenue
       subheading: Faites comme chez vous
   - slide:
@@ -11,11 +11,11 @@ carousel:
   - slide:
       heading: Restez pas là
       subheading: Mettez vous au chaud
-      image: /img/topimage-classic-hamburger-2019m04-800x534.jpg
+      image: /img/jason-leung-o67lzfeyybk-unsplash.jpg
   - slide:
       heading: Vraiment
       subheading: Viens, on est bien
-      image: /img/chemex.jpg
+      image: /img/jay-wennington-n_y88twmgwa-unsplash.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 templateKey: index-page
