@@ -10,26 +10,30 @@ import Features from '../components/Features'
 import CarouselSlide from '../components/Slide'
 
 export const IndexPageTemplate = ({
-  image,
   title,
-  heading,
-  subheading,
-  mainpitch,
   description,
-  intro,
+  carousel
 }) => (
-  <div>
+  <main>
+    <div
+    className="wrapper"
+  >
     <Carousel
+      className="full-width-image-container" 
       autoPlay={true}
       infiniteLoop={true}
       showStatus={false}
       showThumbs={false}
       interval={4000}
-      className="full-width-image-container" 
     >
-      <CarouselSlide title={title} subheading={subheading} imageSrc={!!image.childImageSharp ? image.childImageSharp.fluid.src : image} />
+      {
+        carousel && carousel.map(({ slide }) => 
+          <CarouselSlide title={slide.heading} subheading={slide.subheading} imageSrc={!!slide.image.childImageSharp ? slide.image.childImageSharp.fluid.src : slide.image} />
+        )
+      }
     </Carousel>
-    <section className="section section--gradient">
+    </div>
+    <section className="has-background-white section section--gradient">
       <div className="container">
         <div className="section">
           <div className="columns">
@@ -37,21 +41,21 @@ export const IndexPageTemplate = ({
               <div className="content">
                 <div className="content">
                   <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
+                    <h1 className="title">{title}</h1>
                   </div>
                   <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
+                    <h3 className="subtitle">{description}</h3>
                   </div>
                 </div>
-                <div className="columns">
+                {/* <div className="columns">
                   <div className="column is-12">
                     <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
+                      {title}
                     </h3>
                     <p>{description}</p>
                   </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
+                </div> */}
+                {/* <Features gridItems={intro.blurbs} /> */}
                 <div className="columns">
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/products">
@@ -76,7 +80,7 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-  </div>
+  </main>
 )
 
 IndexPageTemplate.propTypes = {
@@ -97,13 +101,9 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
-        intro={frontmatter.intro}
+        carousel={frontmatter.carousel}
       />
     </Layout>
   )
@@ -124,34 +124,20 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
+        carousel {
+          slide {
+            heading
+            subheading
             image {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+                fluid(maxWidth: 2048, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
-            text
           }
-          heading
-          description
         }
+        description
       }
     }
   }

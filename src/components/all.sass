@@ -53,16 +53,21 @@ $menu-label-color: $white-ter
     margin-bottom: 1.5rem
     margin-top: 0
 
-// Helper Classes
-.full-width-image-container
+.wrapper
   position: relative
+  width: 100vw
+  min-height: calc(100vh - 3.25rem)
+
+.full-width-image-container
+  position: fixed
   width: 100vw
   height: calc(100vh - 3.25rem)
   display: flex
   justify-content: center
   align-items: center
+  z-index: -1
 
-.full-width-image-container:before
+.wrapper:before
   content: ''
   display: block
   position: absolute
@@ -76,7 +81,7 @@ $menu-label-color: $white-ter
   border-right: 100px solid transparent
   border-top: 100px solid transparent
 
-.full-width-image-container:after
+.wrapper:after
   content: ''
   display: block
   position: absolute
@@ -100,6 +105,8 @@ $menu-label-color: $white-ter
   align-items: center
   position: relative
   z-index: -1
+  transform-origin: 0
+  transform: translateZ(3px)
 
 .btn
   display: inline-block
