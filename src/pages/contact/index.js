@@ -36,10 +36,29 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <h1>Contact</h1>
+        <section className="section container" style={{ minHeight: '60vh', marginTop: '80px' }}>
+          <div className="columns">
+            <div className="column is-half has-background-black">
+              <iframe 
+                width="500" 
+                height="500" 
+                frameborder="0" 
+                scrolling="no" 
+                marginheight="0" 
+                marginwidth="0" 
+                src="https://www.openstreetmap.org/export/embed.html?bbox=6.89856380224228%2C45.45524841175785%2C6.902104318141937%2C45.457171250322894&amp;layer=mapnik&amp;marker=45.45621%2C6.90067" 
+                style={{
+                  borderRadius: '2px'
+                }}
+              />
+            </div>
+            <div className="column has-text-centered p-4">
+              <p className="calligraphed is-size-3">Le Grattalu</p> 
+              <p>Place des curlings</p>
+              <p>73320 TIGNES</p>
+            </div>
+            <div className="column">
+              <h3 className="is-size-4">Contactez-nous</h3>
               <form
                 name="contact"
                 method="post"
@@ -58,7 +77,7 @@ export default class Index extends React.Component {
                 </div>
                 <div className="field">
                   <label className="label" htmlFor={'name'}>
-                    Your name
+                    Votre nom
                   </label>
                   <div className="control">
                     <input
@@ -73,7 +92,7 @@ export default class Index extends React.Component {
                 </div>
                 <div className="field">
                   <label className="label" htmlFor={'email'}>
-                    Email
+                    Votre email
                   </label>
                   <div className="control">
                     <input
@@ -102,7 +121,7 @@ export default class Index extends React.Component {
                 </div>
                 <div className="field">
                   <button className="button is-link" type="submit">
-                    Send
+                    Envoyer
                   </button>
                 </div>
               </form>
