@@ -39,14 +39,8 @@ export const IndexPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{description}</h3>
-                  </div>
-                </div>
+                <h1 className="title calligraphed is-size-2 mb-4">{title}</h1>
+                <p className="p-4">{description}</p>
                 {/* <div className="columns">
                   <div className="column is-12">
                     <h3 className="has-text-weight-semibold is-size-2">
@@ -57,7 +51,7 @@ export const IndexPageTemplate = ({
                 </div> */}
                 {/* <Features gridItems={intro.blurbs} /> */}
                 <div className="columns">
-                  <div className="column is-12 has-text-centered">
+                  <div className="column has-text-centered">
                     <Link className="btn" to="/products">
                       See all products
                     </Link>

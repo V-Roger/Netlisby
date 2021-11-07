@@ -1,6 +1,9 @@
 import React from 'react'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
+import facebook from '../img/social/facebook.svg'
+import instagram from '../img/social/instagram.svg'
+
 const Navbar = class extends React.Component {
   constructor(props) {
     super(props)
@@ -68,8 +71,23 @@ const Navbar = class extends React.Component {
                 CONTACT
               </AniLink>
             </div>
-            <div className="navbar-end has-text-centered">
-              
+            <div className="navbar-end has-text-centered align-center">
+              <a  className="navbar-item" title="facebook" href="https://facebook.com">
+                <img
+                  className="icon"
+                  src={facebook}
+                  alt="Facebook"
+                  style={{ width: '1.5em', height: '1.5em' }}
+                />
+              </a>
+              <a  className="navbar-item" title="instagram" href="https://instagram.com">
+                <img
+                  className="icon"
+                  src={instagram}
+                  alt="Instagram"
+                  style={{ width: '1.5em', height: '1.5em' }}
+                />
+              </a>
             </div>
           </div>
         </div>

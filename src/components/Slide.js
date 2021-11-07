@@ -19,7 +19,7 @@ const CarouselSlide = class CarouselSlide extends React.Component {
             height: '150px',
             lineHeight: '1',
             justifyContent: 'space-around',
-            alignItems: 'left',
+            alignItems: 'center',
             flexDirection: 'column',
           }}
         >

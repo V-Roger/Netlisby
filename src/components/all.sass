@@ -30,11 +30,16 @@ $menu-label-color: $white-ter
 
 @import "~bulma"
 
+*, *:before, *:after
+  font-family: arpona, serif
+  font-weight: 100
+  font-style: normal
+
 .navbar .navbar-menu
   box-shadow: none !important
 
 .calligraphed
-  font-family: medusa, sans-serif
+  font-family: medusa, sans-serif !important
   font-weight: 400
   font-style: normal
 
@@ -140,6 +145,10 @@ $menu-label-color: $white-ter
 
 a.navbar-item, a.navbar-item .icon
   color: $black
+  font-family: arpona, serif
+  font-weight: 400
+  font-style: normal
+
   &:hover,
   &:focus,
   &:active
