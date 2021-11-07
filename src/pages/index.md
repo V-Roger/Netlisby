@@ -8,6 +8,14 @@ carousel:
       image: /img/jumbotron.jpg
       heading: Faites comme chez vous
       subheading: Bienvenue
+  - slide:
+      heading: Restez pas là
+      subheading: Mettez vous au chaud
+      image: /img/topimage-classic-hamburger-2019m04-800x534.jpg
+  - slide:
+      heading: Vraiment
+      subheading: Viens, on est bien
+      image: /img/chemex.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 templateKey: index-page
