@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-import qrCode from '../../static/img/hopeful-menu.svg'
+import qrCode from '../../static/img/grattalu-pdf-code.svg'
 
 export const MenuPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
