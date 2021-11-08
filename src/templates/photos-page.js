@@ -54,7 +54,7 @@ const PhotosPage = ({ data }) => {
                         key={image.publicURL} 
                         src={image.publicURL} onClick={() => setState({ selectedImage: image })}
                         style={{
-                          borderRadius: '2px'
+                          borderRadius: '4px'
                         }}
                       />
                   )}        

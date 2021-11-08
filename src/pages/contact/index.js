@@ -40,8 +40,8 @@ export default class Index extends React.Component {
           <div className="columns">
             <div className="column is-half has-background-black">
               <iframe 
-                width="500" 
-                height="500" 
+                width="610" 
+                height="560" 
                 frameborder="0" 
                 scrolling="no" 
                 marginheight="0" 
