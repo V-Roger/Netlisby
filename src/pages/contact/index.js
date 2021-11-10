@@ -63,7 +63,7 @@ export default class Index extends React.Component {
               <form
                 name="contact"
                 method="post"
-                action="/contact/thanks/"
+                action="/contact/merci/"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={this.handleSubmit}
@@ -121,7 +121,7 @@ export default class Index extends React.Component {
                   </div>
                 </div>
                 <div className="field">
-                  <button className="button is-link" type="submit">
+                  <button className="button has-text-weight-bold is-black" type="submit">
                     Envoyer
                   </button>
                 </div>
