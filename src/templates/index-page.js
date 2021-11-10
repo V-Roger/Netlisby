@@ -1,103 +1,95 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 
 import Layout from '../components/Layout'
-import Features from '../components/Features'
 import CarouselSlide from '../components/Slide'
+import Content, { HTMLContent } from '../components/Content'
 
 export const IndexPageTemplate = ({
   title,
   description,
-  carousel
-}) => (
-  <main>
-    <div
-    className="wrapper"
-  >
-    <Carousel
-      className="full-width-image-container" 
-      autoPlay={true}
-      infiniteLoop={true}
-      showStatus={false}
-      showThumbs={false}
-      interval={4000}
+  carousel,
+  content,
+  contentComponent,
+}) => {
+  const PageContent = contentComponent || Content
+
+  return (
+    <main>
+      <div
+      className="wrapper"
     >
-      {
-        carousel && carousel.map(({ slide }) => 
-          <CarouselSlide title={slide.heading} subheading={slide.subheading} imageSrc={!!slide.image.childImageSharp ? slide.image.childImageSharp.fluid.src : slide.image} />
-        )
-      }
-    </Carousel>
-    </div>
-    <section className="has-background-white section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <h1 className="title calligraphed is-size-2 mb-4">{title}</h1>
-                <p className="p-4">{description}</p>
-                {/* <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {title}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div> */}
-                {/* <Features gridItems={intro.blurbs} /> */}
-                <div className="columns">
-                  <div className="column has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
+      <Carousel
+        className="full-width-image-container" 
+        autoPlay={true}
+        infiniteLoop={true}
+        showStatus={false}
+        showThumbs={false}
+        interval={4000}
+      >
+        {
+          carousel && carousel.map(({ slide }) => 
+            <CarouselSlide title={slide.heading} subheading={slide.subheading} imageSrc={!!slide.image.childImageSharp ? slide.image.childImageSharp.fluid.src : slide.image} />
+          )
+        }
+      </Carousel>
+      </div>
+      <section className="has-background-white section section--gradient">
+        <div className="container">
+          <div className="section">
+            <div className="columns">
+              <div className="column is-10 is-offset-1">
+                <div className="content">
+                  <h1 className="title calligraphed is-size-2 mb-4">{title}</h1>
+                  <p className="p-4">{description}</p>
+                  <div className="columns">
+                    <div className="column has-text-centered">
+                      <AniLink cover bg="white" duration={0.5} className="btn" to="/menu">
+                        MENU
+                      </AniLink>
+                    </div>
                   </div>
                 </div>
-                {/* <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
-                </div> */}
+                <PageContent className="content" content={content} />
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
-)
+      </section>
+    </main>
+  )
+}
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
   description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  content: PropTypes.string,
+  contentComponent: PropTypes.func,
+  carousel: PropTypes.shape({
+    slide: PropTypes.shape({
+      heading: PropTypes.string,
+      subhedaing: PropTypes.string,
+      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+    })
+  })
 }
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { markdownRemark: page } = data
 
   return (
     <Layout>
       <IndexPageTemplate
-        title={frontmatter.title}
-        description={frontmatter.description}
-        carousel={frontmatter.carousel}
+        title={page.frontmatter.title}
+        description={page.frontmatter.description}
+        carousel={page.frontmatter.carousel}
+        content={page.html}
+        contentComponent={HTMLContent}
       />
     </Layout>
   )
@@ -116,8 +108,10 @@ export default IndexPage
 export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      html
       frontmatter {
         title
+        description
         carousel {
           slide {
             heading
@@ -131,7 +125,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        description
       }
     }
   }

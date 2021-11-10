@@ -39,18 +39,16 @@ export default class Index extends React.Component {
         <section className="section container" style={{ minHeight: '60vh', marginTop: '80px' }}>
           <div className="columns">
             <div className="column is-half has-background-black">
-              <iframe 
-                width="610" 
-                height="560" 
-                frameborder="0" 
-                scrolling="no" 
-                marginheight="0" 
-                marginwidth="0" 
-                src="https://www.openstreetmap.org/export/embed.html?bbox=6.89856380224228%2C45.45524841175785%2C6.902104318141937%2C45.457171250322894&amp;layer=mapnik&amp;marker=45.45621%2C6.90067" 
-                style={{
-                  borderRadius: '2px'
-                }}
-              />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.669678339058!2d6.898338815973391!3d45.456312141990175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478974b161379577%3A0x3f967e7601843513!2sRestaurant%20Le%20Grattalu!5e0!3m2!1sen!2sfr!4v1636562248583!5m2!1sen!2sfr"
+              width="610"
+              height="610"
+              allowfullscreen="true"
+              loading="lazy"
+              style={{
+                borderRadius: '2px',
+              }}
+            />
             </div>
             <div className="column has-text-centered p-4">
               <p className="calligraphed is-size-3">Le Grattalu</p> 
