@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Le Grattalu',
+    siteURL: 'https://hopeful-yonath-0869ae.netlify.app',
     description:
       'Le Grattalu vous accueille à sa table, Place des curlings à Tignes'
   },
