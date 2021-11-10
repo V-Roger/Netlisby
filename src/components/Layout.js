@@ -50,7 +50,7 @@ const TemplateWrapper = ({ children }) => {
         <link rel="stylesheet" href="https://use.typekit.net/vom1sxe.css"/>
       </Helmet>
       <Navbar />
-      <div>{children}</div>
+      <div style={{ minHeight: 'calc(45vh + 3.5rem)' }}>{children}</div>
       <Footer />
     </div>
   )

@@ -14,7 +14,7 @@ export const MenuPageTemplate = ({ title, content, contentComponent }) => {
       <div className="container">
         <div className="columns">
           <div className="column is-2">
-            <img src={qrCode} alt="menu" />
+            <a href="https://hopeful-yonath-0869ae.netlify.app/img/neo40-le-grattalu-2017.pdf" alt="le menu du Grattalu"><img src={qrCode} alt="menu" /></a>
           </div>
           <div className="column is-10">
             <h2 className="title is-size-3 has-text-weight-bold is-bold-light">

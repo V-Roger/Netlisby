@@ -46,7 +46,11 @@ const PhotosPage = ({ data }) => {
             <div className="container">
               <div className="section">
                 <Masonry
-                  breakpointCols={4}
+                  breakpointCols={{
+                    default: 4,
+                    1100: 3,
+                    700: 2,
+                  }}
                   className="my-masonry-grid"
                   columnClassName="my-masonry-grid_column">
                   {gallery.map(image => 

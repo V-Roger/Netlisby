@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import facebook from '../img/social/facebook.svg'
 import instagram from '../img/social/instagram.svg'
@@ -19,61 +19,49 @@ const Footer = class extends React.Component {
                 <section className="menu">
                   <ul className="menu-list">
                     <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
+                      <AniLink cover bg="white" duration={0.5} to="/" className="navbar-item">
+                        Accueil
+                      </AniLink>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/menu">
+                      <AniLink cover bg="white" duration={0.5} className="navbar-item" to="/menu">
                         Menu
-                      </Link>
+                      </AniLink>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
+                      <AniLink cover bg="white" duration={0.5} className="navbar-item" to="/photos">
+                        Photos
+                      </AniLink>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
+                      <AniLink cover bg="white" duration={0.5} className="navbar-item" to="/contact">
+                        Contact
+                      </AniLink>
                     </li>
                   </ul>
                 </section>
               </div>
               <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
               </div>
-              <div className="column is-3 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
+              <div className="column is-4">
+                <div className="social">
+                  <a title="facebook" href="https://facebook.com">
+                    <img
+                      src={facebook}
+                      alt="Facebook"
+                      style={{ width: '1em', height: '1em' }}
+                    />
+                  </a>
+                  <a title="instagram" href="https://instagram.com">
+                    <img
+                      src={instagram}
+                      alt="Instagram"
+                      style={{ width: '1em', height: '1em' }}
+                    />
+                  </a>
+                </div>
                 <div className="section">
-                  <img src={qrCode} alt="menu" />
+                  <a href="https://hopeful-yonath-0869ae.netlify.app/img/neo40-le-grattalu-2017.pdf" alt="le menu du Grattalu"><img src={qrCode} alt="menu" style={{ maxWidth: '192px' }}/></a>
                 </div>
               </div>
             </div>
