@@ -49,10 +49,10 @@ export const IndexPageTemplate = ({
                   <p className="p-4">{description}</p>
                   <div className="columns">
                     <div className="column has-text-centered">
-                      <AniLink cover bg="white" duration={0.5} className="btn mx-4" to="/menu">
+                      <AniLink cover bg="white" duration={0.5} className="btn mx-4 mt-4" to="/menu">
                         MENU
                       </AniLink>
-                      <a href="tel:0479063078" alt="Réservations" className="btn">
+                      <a href="tel:0479063078" alt="Réservations" className="btn mt-4">
                         Réservations au 04 79 06 30 78
                       </a>
                     </div>
