@@ -2,7 +2,7 @@ import React from 'react'
 
 const CarouselSlide = class CarouselSlide extends React.Component {
   render() {
-    const { imageSrc, title, subheading } = this.props;
+    const { imageSrc, title } = this.props;
 
     return (
       <div
@@ -27,7 +27,7 @@ const CarouselSlide = class CarouselSlide extends React.Component {
             className="calligraphed has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
             style={{
               boxShadow:
-                '#8C0303 0.5rem 0.5rem 0px, #F23322 -0.5rem -0.5rem 0px',
+                '#630611 0.5rem 0.5rem 0px, #8C0303 -0.5rem -0.5rem 0px',
               backgroundColor: '#400101',
               color: 'white',
               lineHeight: '1',
@@ -37,21 +37,6 @@ const CarouselSlide = class CarouselSlide extends React.Component {
           >
             {title}
           </h1>
-          <h3
-            className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-            style={{
-              boxShadow:
-                '#8C0303 0.5rem 0px 0px, #F23322 -0.5rem 0px 0px',
-              backgroundColor: '#400101',
-              color: 'white',
-              lineHeight: '1',
-              padding: '0.5em',
-              marginTop: '1.6em',
-              borderRadius: '2px'
-            }}
-          >
-            {subheading}
-          </h3>
         </div>
       </div>
     )

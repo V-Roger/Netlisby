@@ -2,21 +2,14 @@
 templateKey: index-page
 carousel:
   - slide:
-      image: /img/alex-munsell-yr4n8o_3upc-unsplash.jpg
       heading: Bienvenue
-      subheading: Faites comme chez vous
+      image: /img/gregoire_mourlevat_restaurant_tignes_legrattalu-3676.jpg
   - slide:
-      image: /img/jumbotron.jpg
-      heading: Faites comme chez vous
-      subheading: Bienvenue
+      heading: Bienvenue
+      image: /img/gregoire_mourlevat_restaurant_tignes_legrattalu-3734.jpg
   - slide:
-      heading: Restez pas là
-      subheading: Mettez vous au chaud
-      image: /img/jason-leung-o67lzfeyybk-unsplash.jpg
-  - slide:
-      heading: Vraiment
-      subheading: Viens, on est bien
-      image: /img/jay-wennington-n_y88twmgwa-unsplash.jpg
+      heading: Bienvenue
+      image: /img/gregoire_mourlevat_restaurant_tignes_legrattalu-3837.jpg
 title: Le Grattalu
 description: >
   Bacon ipsum dolor amet ham hock chicken hamburger bresaola ribeye chuck porchetta shank kielbasa meatball turducken. Swine capicola short ribs beef jowl drumstick kielbasa strip steak andouille boudin pork belly ham hock jerky. Pork cupim kevin salami shoulder meatball ground round tongue pig shank rump pork chop. 

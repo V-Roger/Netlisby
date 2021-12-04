@@ -45,23 +45,20 @@ const Footer = class extends React.Component {
               </div>
               <div className="column is-4">
                 <div className="social">
-                  <a title="facebook" href="https://facebook.com">
+                  <a title="Retrouvez le Grattalu sur Facebook" href="https://www.facebook.com/legrattalu/">
                     <img
                       src={facebook}
-                      alt="Facebook"
+                      alt="Retrouvez le Grattalu sur Facebook"
                       style={{ width: '1em', height: '1em' }}
                     />
                   </a>
-                  <a title="instagram" href="https://instagram.com">
+                  <a title="Retrouvez le Grattalu sur Instagram" href="https://www.instagram.com/le.grattalu/">
                     <img
                       src={instagram}
-                      alt="Instagram"
+                      alt="Retrouvez le Grattalu sur Instagram"
                       style={{ width: '1em', height: '1em' }}
                     />
                   </a>
-                </div>
-                <div className="section">
-                  <a href="https://hopeful-yonath-0869ae.netlify.app/img/neo40-le-grattalu-2017.pdf" alt="le menu du Grattalu"><img src={qrCode} alt="menu" style={{ maxWidth: '192px' }}/></a>
                 </div>
               </div>
             </div>

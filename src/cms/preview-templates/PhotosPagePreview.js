@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { PhotosPageTemplate } from '../../templates/photos-page'
+import { PhotosPage as PhotosPageTemplate } from '../../templates/photos-page'
 
 const PhotosPagePreview = ({ entry, getAsset }) => {
   const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs'])

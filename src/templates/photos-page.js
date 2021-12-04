@@ -31,7 +31,7 @@ const PhotosPage = ({ data }) => {
               className="calligraphed has-text-weight-bold is-size-1"
               style={{
                 boxShadow:
-                '#8C0303 0.5rem 0.5rem 0px, #F23322 -0.5rem -0.5rem 0px',
+                  '#630611 0.5rem 0.5rem 0px, #8C0303 -0.5rem -0.5rem 0px',
                 backgroundColor: '#400101',
                 color: 'white',
                 lineHeight: '1',

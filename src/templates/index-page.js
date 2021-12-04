@@ -34,7 +34,7 @@ export const IndexPageTemplate = ({
       >
         {
           carousel && carousel.map(({ slide }) => 
-            <CarouselSlide title={slide.heading} subheading={slide.subheading} imageSrc={!!slide.image.childImageSharp ? slide.image.childImageSharp.fluid.src : slide.image} />
+            <CarouselSlide key={slide.heading} title={slide.heading} imageSrc={!!slide.image.childImageSharp ? slide.image.childImageSharp.fluid.src : slide.image} />
           )
         }
       </Carousel>
@@ -49,9 +49,12 @@ export const IndexPageTemplate = ({
                   <p className="p-4">{description}</p>
                   <div className="columns">
                     <div className="column has-text-centered">
-                      <AniLink cover bg="white" duration={0.5} className="btn" to="/menu">
+                      <AniLink cover bg="white" duration={0.5} className="btn mx-4" to="/menu">
                         MENU
                       </AniLink>
+                      <a href="tel:0479063078" alt="Réservations" className="btn">
+                        Réservations au 04 79 06 30 78
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -70,13 +73,13 @@ IndexPageTemplate.propTypes = {
   description: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
-  carousel: PropTypes.shape({
+  carousel: PropTypes.arrayOf(PropTypes.shape({
     slide: PropTypes.shape({
       heading: PropTypes.string,
       subhedaing: PropTypes.string,
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
     })
-  })
+  }))
 }
 
 const IndexPage = ({ data }) => {
@@ -115,7 +118,6 @@ export const pageQuery = graphql`
         carousel {
           slide {
             heading
-            subheading
             image {
               childImageSharp {
                 fluid(maxWidth: 2048, quality: 100) {

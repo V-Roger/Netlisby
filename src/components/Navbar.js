@@ -72,19 +72,19 @@ const Navbar = class extends React.Component {
               </AniLink>
             </div>
             <div className="navbar-end has-text-centered align-center">
-              <a  className="navbar-item" title="facebook" href="https://facebook.com">
+              <a  className="navbar-item" title="Retrouvez le Grattalu sur Facebook" href="https://www.facebook.com/legrattalu/">
                 <img
                   className="icon"
                   src={facebook}
-                  alt="Facebook"
+                  alt="Retrouvez le Grattalu sur Facebook"
                   style={{ width: '1.5em', height: '1.5em' }}
                 />
               </a>
-              <a  className="navbar-item" title="instagram" href="https://instagram.com">
+              <a  className="navbar-item" title="Retrouvez le Grattalu sur Instagram" href="https://www.instagram.com/le.grattalu/">
                 <img
                   className="icon"
                   src={instagram}
-                  alt="Instagram"
+                  alt="Retrouvez le Grattalu sur Instagram"
                   style={{ width: '1.5em', height: '1.5em' }}
                 />
               </a>

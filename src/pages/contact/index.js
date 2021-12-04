@@ -57,77 +57,9 @@ export default class Index extends React.Component {
               <p className="calligraphed is-size-3">Le Grattalu</p> 
               <p>Place des curlings</p>
               <p>73320 TIGNES</p>
+              <p><b>04 79 06 30 78</b></p>
+              </div>
             </div>
-            <div className="column">
-              <h3 className="is-size-4">Contactez-nous</h3>
-              <form
-                name="contact"
-                method="post"
-                action="/contact/merci/"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                onSubmit={this.handleSubmit}
-              >
-                {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                <input type="hidden" name="form-name" value="contact" />
-                <div hidden>
-                  <label>
-                    Don’t fill this out:{' '}
-                    <input name="bot-field" onChange={this.handleChange} />
-                  </label>
-                </div>
-                <div className="field">
-                  <label className="label" htmlFor={'name'}>
-                    Votre nom
-                  </label>
-                  <div className="control">
-                    <input
-                      className="input"
-                      type={'text'}
-                      name={'name'}
-                      onChange={this.handleChange}
-                      id={'name'}
-                      required={true}
-                    />
-                  </div>
-                </div>
-                <div className="field">
-                  <label className="label" htmlFor={'email'}>
-                    Votre email
-                  </label>
-                  <div className="control">
-                    <input
-                      className="input"
-                      type={'email'}
-                      name={'email'}
-                      onChange={this.handleChange}
-                      id={'email'}
-                      required={true}
-                    />
-                  </div>
-                </div>
-                <div className="field">
-                  <label className="label" htmlFor={'message'}>
-                    Message
-                  </label>
-                  <div className="control">
-                    <textarea
-                      className="textarea"
-                      name={'message'}
-                      onChange={this.handleChange}
-                      id={'message'}
-                      required={true}
-                    />
-                  </div>
-                </div>
-                <div className="field">
-                  <button className="button has-text-weight-bold is-black" type="submit">
-                    Envoyer
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
         </section>
       </Layout>
     )
