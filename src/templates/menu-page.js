@@ -4,22 +4,27 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-import qrCode from '../../static/img/grattalu-pdf-code.svg'
-
 export const MenuPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <section className="section">
+    <section className="section wrapper">
       <div className="container">
         <div className="columns">
-          <div className="column is-2">
-            <a href="https://hopeful-yonath-0869ae.netlify.app/img/neo40-le-grattalu-2017.pdf" alt="le menu du Grattalu"><img src={qrCode} alt="menu" /></a>
-          </div>
-          <div className="column is-10">
-            <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-              {title}
-            </h2>
+          <div className="column is-10 is-offset-1">
+            <div className="is-flex is-flex-direction-row is-flex-wrap-nowrap is-justify-content-space-between is-align-items-center">
+              <h2 className="title is-size-3 has-text-weight-bold is-bold-light mb-0">
+                {title}
+              </h2>
+              <div>
+                <a href="tel:0479063078" alt="Réservations" className="btn mr-4">
+                  Nos boissons et vins
+                </a>
+                <a href="tel:0479063078" alt="Réservations" className="btn">
+                  Notre carte
+                </a>
+              </div>
+            </div>
             <PageContent className="content" content={content} />
           </div>
         </div>
