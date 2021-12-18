@@ -17,10 +17,10 @@ export const MenuPageTemplate = ({ title, content, contentComponent }) => {
                 {title}
               </h2>
               <div>
-                <a href="/carte_le-grattalu.pdf" alt="Réservations" className="btn mr-4">
+                <a href="/carte_le-grattalu.pdf" target="_blank" alt="Nos boissons et vins" className="btn mr-4">
                   Nos boissons et vins
                 </a>
-                <a href="/carte_le-grattalu.pdf" alt="Réservations" className="btn">
+                <a href="/carte_le-grattalu.pdf" target="_blank" alt="Notre carte" className="btn">
                   Notre carte
                 </a>
               </div>

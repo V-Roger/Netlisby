@@ -45,14 +45,14 @@ const Footer = class extends React.Component {
               </div>
               <div className="column is-4">
                 <div className="social">
-                  <a title="Retrouvez le Grattalu sur Facebook" href="https://www.facebook.com/legrattalu/">
+                  <a title="Retrouvez le Grattalu sur Facebook" target="_blank" href="https://www.facebook.com/legrattalu/">
                     <img
                       src={facebook}
                       alt="Retrouvez le Grattalu sur Facebook"
                       style={{ width: '1em', height: '1em' }}
                     />
                   </a>
-                  <a title="Retrouvez le Grattalu sur Instagram" href="https://www.instagram.com/le.grattalu/">
+                  <a title="Retrouvez le Grattalu sur Instagram" target="_blank" href="https://www.instagram.com/le.grattalu/">
                     <img
                       src={instagram}
                       alt="Retrouvez le Grattalu sur Instagram"
