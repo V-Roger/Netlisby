@@ -12,7 +12,7 @@ export const MenuPageTemplate = ({ title, content, contentComponent }) => {
       <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <div className="is-flex is-flex-direction-row is-flex-wrap-nowrap is-justify-content-space-between is-align-items-center">
+            <div className="is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-between is-align-items-center">
               <h2 className="title is-size-3 has-text-weight-bold is-bold-light mb-0">
                 {title}
               </h2>
