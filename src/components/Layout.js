@@ -45,7 +45,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="/" />
         <meta
           property="og:image"
-          content={`${withPrefix(`${siteURL}/`)}img/og-image.jpg`}
+          content={`${withPrefix(`${siteURL}/`)}img/gregoire_mourlevat_restaurant_tignes_legrattalu-3676.jpg`}
         />
         <link rel="stylesheet" href="https://use.typekit.net/vom1sxe.css"/>
       </Helmet>
