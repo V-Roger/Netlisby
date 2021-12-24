@@ -15,33 +15,31 @@ const Footer = class extends React.Component {
         <div className="content has-text-centered has-background-black has-text-white-ter">
           <div className="container has-background-black has-text-white-ter">
             <div style={{ maxWidth: '100vw' }} className="columns">
-              <div className="column is-4">
+              <div className="column is-8">
                 <section className="menu">
-                  <ul className="menu-list">
-                    <li>
+                  <ul className="menu-list is-flex is-flex-direction-row is-flex-wrap-nowrap	is-justify-content-center	is-align-content-center	is-align-items-center	">
+                    <li class="mt-0">
                       <AniLink cover bg="white" duration={0.5} to="/" className="navbar-item">
                         Accueil
                       </AniLink>
                     </li>
-                    <li>
+                    <li class="mt-0">
                       <AniLink cover bg="white" duration={0.5} className="navbar-item" to="/menu">
                         Menu
                       </AniLink>
                     </li>
-                    <li>
+                    <li class="mt-0">
                       <AniLink cover bg="white" duration={0.5} className="navbar-item" to="/photos">
                         Photos
                       </AniLink>
                     </li>
-                    <li>
+                    <li class="mt-0">
                       <AniLink cover bg="white" duration={0.5} className="navbar-item" to="/contact">
                         Contact
                       </AniLink>
                     </li>
                   </ul>
                 </section>
-              </div>
-              <div className="column is-4">
               </div>
               <div className="column is-4">
                 <div className="social">

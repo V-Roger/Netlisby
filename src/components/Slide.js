@@ -8,9 +8,8 @@ const CarouselSlide = class CarouselSlide extends React.Component {
       <div
         className="full-width-image margin-top-0"
         style={{
-          backgroundImage: `url(${imageSrc})`,
+          backgroundImage: `URL(${imageSrc})`,
           backgroundPosition: `bottom`,
-          backgroundAttachment: `fixed`,
         }}
       >
         <div

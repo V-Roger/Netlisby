@@ -65,6 +65,7 @@ const PhotosPage = ({ data }) => {
                 </Masonry>
                 {state.selectedImage && (
                   <Lightbox 
+                    enableZoom={false}
                     mainSrc={state.selectedImage.publicURL}
                     onCloseRequest={() => setState({ selectedImage: null })}
                   />

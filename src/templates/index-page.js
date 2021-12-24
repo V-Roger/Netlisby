@@ -12,7 +12,6 @@ import Content, { HTMLContent } from '../components/Content'
 
 export const IndexPageTemplate = ({
   title,
-  description,
   carousel,
   content,
   contentComponent,
@@ -46,7 +45,7 @@ export const IndexPageTemplate = ({
               <div className="column is-10 is-offset-1">
                 <div className="content">
                   <h1 className="title calligraphed is-size-2 mb-4">{title}</h1>
-                  <p className="p-4">{description}</p>
+                  <PageContent className="content" content={content} />
                   <div className="columns">
                     <div className="column has-text-centered">
                       <AniLink cover bg="white" duration={0.5} className="btn mx-4 mt-4" to="/menu">
@@ -58,7 +57,6 @@ export const IndexPageTemplate = ({
                     </div>
                   </div>
                 </div>
-                <PageContent className="content" content={content} />
               </div>
             </div>
           </div>
@@ -70,7 +68,6 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   title: PropTypes.string,
-  description: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
   carousel: PropTypes.arrayOf(PropTypes.shape({
@@ -89,7 +86,6 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         title={page.frontmatter.title}
-        description={page.frontmatter.description}
         carousel={page.frontmatter.carousel}
         content={page.html}
         contentComponent={HTMLContent}
@@ -114,7 +110,6 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        description
         carousel {
           slide {
             heading

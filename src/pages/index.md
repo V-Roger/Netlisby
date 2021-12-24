@@ -11,7 +11,6 @@ carousel:
       heading: Bienvenue
       image: /img/gregoire_mourlevat_restaurant_tignes_legrattalu-3837.jpg
 title: Le Grattalu
-description: Le Grattalu vous accueille à Tignes 
 ---
 Le restaurant le Grattalu est un véritable incontournable à Tignes depuis plus de 30 ans pour les amateurs de spécialités savoyardes, mais pas que !
 

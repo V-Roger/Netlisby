@@ -16,14 +16,14 @@ export const MenuPageTemplate = ({ title, content, contentComponent }) => {
               <h2 className="title is-size-3 has-text-weight-bold is-bold-light mb-0">
                 {title}
               </h2>
-              <div>
-                <a href="/carte_le-grattalu.pdf" target="_blank" alt="Nos boissons et vins" className="btn mr-4">
-                  Nos boissons et vins
-                </a>
-                <a href="/carte_le-grattalu.pdf" target="_blank" alt="Notre carte" className="btn">
-                  Notre carte
-                </a>
-              </div>
+            </div>
+            <div className="mt-4">
+              <a href="/carte_le-grattalu_boissons_vins.pdf" target="_blank" alt="Nos boissons et vins" className="btn mr-4">
+                Nos boissons et vins
+              </a>
+              <a href="/carte_le-grattalu.pdf" target="_blank" alt="Notre carte" className="btn">
+                Notre carte
+              </a>
             </div>
             <PageContent className="content" content={content} />
           </div>
