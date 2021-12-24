@@ -57,7 +57,7 @@ export default class Index extends React.Component {
               <p className="calligraphed is-size-3">Le Grattalu</p> 
               <p>Place des curlings</p>
               <p>73320 TIGNES</p>
-              <p><b>04 79 06 30 78</b></p>
+              <a href="tel:0479063078" alt="Réservations" className="btn"><b>04 79 06 30 78</b></a>
               </div>
             </div>
         </section>
